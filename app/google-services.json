@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "22779678135",
+    "firebase_url": "https://mokisan-dev.firebaseio.com",
+    "project_id": "mokisan-dev",
+    "storage_bucket": "mokisan-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22779678135:android:d2dd4544af32a33d83ec32",
+        "android_client_info": {
+          "package_name": "com.farmhike.mokisan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22779678135-j5cjt7l0i7admuonv8gks3g49ghgn32s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKfbSiIVzDHHjSDiiqC_rZts7RhU9UtgQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22779678135-j5cjt7l0i7admuonv8gks3g49ghgn32s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

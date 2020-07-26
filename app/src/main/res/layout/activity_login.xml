@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.LoginActivity">
+
+    <EditText
+        android:id="@+id/editText_Login_phoneNo"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Enter Phone No"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:onClick="sendOtp"
+        android:text="Get Otp"
+        tools:ignore="MissingConstraints" />
+
+</LinearLayout>
+
+
+    <!--
+
+    Enter phone EditText id - editText_Login_phoneNo
+
+    and for button use android:onClick="sendOtp"
+
+
+    -->
