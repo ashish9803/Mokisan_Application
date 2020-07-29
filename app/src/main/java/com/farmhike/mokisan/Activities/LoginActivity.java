@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDialogFragment;
 
 import com.farmhike.mokisan.Models.AppContext;
 import com.farmhike.mokisan.Models.UserLoginData;
@@ -15,6 +17,7 @@ import com.farmhike.mokisan.R;
 import com.farmhike.mokisan.Utils.PhoneAuth;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -33,7 +36,6 @@ public class LoginActivity extends AppCompatActivity {
 
         PhoneAuth.setFirebaseAuth(FirebaseAuth.getInstance());
 
-
         next_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,9 +53,13 @@ public class LoginActivity extends AppCompatActivity {
         //EditText editText = findViewById(R.id.editText_Login_phoneNo);
         String phoneNo = editText.getEditText().getText().toString();
 
-        if(phoneNo.length()==0 || phoneNo.length()>10)
+        if(phoneNo.length()==0)
         {
             Toast.makeText(getApplicationContext(),"Please Enter Your Phone Number",Toast.LENGTH_LONG).show();
+        }
+        else if(phoneNo.length()>11)
+        {
+            editText.setError("Enter 10 digit mobile number");
         }
         else if(!phoneNo.matches("[0-9]{10}"))
         {

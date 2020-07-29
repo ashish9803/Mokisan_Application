@@ -8,45 +8,37 @@
     tools:context=".Activities.LoginActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
+
+        android:id="@+id/imageView_bottomLogin"
         android:layout_width="412dp"
-        android:layout_height="230dp"
+        android:layout_height="134dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/cred" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="173dp"
-        android:layout_height="190dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.932"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/leaf" />
-
+        app:srcCompat="@drawable/cred_new" />
     <TextView
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+
+        android:layout_marginTop="180sp"
         android:text="Login"
         android:textColor="#808080"
-        android:textSize="50sp"
+        android:textSize="45sp"
         android:textStyle="bold"
-        app:fontFamily="@font/roboto_medium"
+        app:fontFamily="@font/gotham_rounded_book"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/heading_login2" />
+
 
     <LinearLayout
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
         app:layout_constraintTop_toBottomOf="@+id/login">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -72,12 +64,13 @@
     <Button
         android:id="@+id/next_login"
         android:layout_width="80dp"
-        android:layout_height="41dp"
+        android:layout_height="30dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_button"
         android:cursorVisible="false"
         android:ellipsize="none"
         android:text="Next"
+        app:fontFamily="@font/gotham_rounded_medium"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,6 +86,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="68dp"
         android:text="Welcome To MoKisan"
+        app:fontFamily="@font/gotham_rounded_book"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,6 +99,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="4dp"
         android:text="Lets Get Started"
+        app:fontFamily="@font/gotham_rounded_book"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heading_login1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

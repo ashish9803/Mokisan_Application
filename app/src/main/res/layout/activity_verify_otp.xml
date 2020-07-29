@@ -7,40 +7,45 @@
     android:background="#FFFFFF"
     tools:context=".Activities.VerifyOtp">
 
-    <ImageView
-        android:id="@+id/imageViewBottom2"
-        android:layout_width="412dp"
-        android:layout_height="230dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/back_otp"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/rounded_button"
+        android:cursorVisible="false"
+        android:ellipsize="none"
+        android:text="Back"
+        app:fontFamily="@font/gotham_rounded_medium"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/cred" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageViewBottom"
-        android:layout_width="173dp"
-        android:layout_height="190dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/imageView_bottomOtp"
+        android:layout_width="412dp"
+        android:layout_height="134dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/leaf" />
+        app:srcCompat="@drawable/cred_new" />
 
     <TextView
         android:id="@+id/otp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="180sp"
         android:text="OTP"
-        app:fontFamily="@font/roboto_medium"
-        android:textSize="50sp"
+        android:textSize="45sp"
         android:textStyle="bold"
+        app:fontFamily="@font/gotham_rounded_book"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewBottom" />
+        app:layout_constraintTop_toBottomOf="@+id/heading_otp2" />
 
     <LinearLayout
         android:id="@+id/linear_layout_otp"
@@ -78,6 +83,8 @@
         android:layout_height="wrap_content"
         android:background="#00000000"
         android:text="Resend OTP"
+        app:fontFamily="@font/gotham_rounded_medium"
+        android:layout_marginTop="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.695"
         app:layout_constraintStart_toEndOf="@+id/checkBox"
@@ -85,13 +92,14 @@
 
     <Button
         android:id="@+id/next_otp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/rounded_button"
         android:cursorVisible="false"
         android:ellipsize="none"
         android:text="Next"
+        app:fontFamily="@font/gotham_rounded_medium"
         android:textColor="#ffffff"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,9 +110,11 @@
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="222dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:text="By signing up you accept the terms of services and privacy policy"
+        app:fontFamily="@font/gotham_rounded_medium"
         app:layout_constraintEnd_toStartOf="@+id/next_otp"
+        android:layout_marginTop="12sp"
         app:layout_constraintHorizontal_bias="0.225"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linear_layout_otp" />
@@ -116,6 +126,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="68dp"
         android:text="Verify Your Number"
+        app:fontFamily="@font/gotham_rounded_book"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -128,6 +139,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
+        app:fontFamily="@font/gotham_rounded_book"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heading_otp1" />
 
