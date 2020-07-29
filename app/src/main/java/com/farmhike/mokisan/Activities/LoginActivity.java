@@ -3,17 +3,17 @@ package com.farmhike.mokisan.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.farmhike.mokisan.Models.UserLoginData;
 import com.farmhike.mokisan.Models.AppContext;
 import com.farmhike.mokisan.Models.UserLoginData;
 import com.farmhike.mokisan.R;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.farmhike.mokisan.Utils.PhoneAuth;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
@@ -25,15 +25,14 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
-        next_login = (Button)(findViewById(R.id.next_login));
-        editText = (TextInputLayout)(findViewById(R.id.editText_Login_phoneNo));
+        next_login = findViewById(R.id.next_login);
+        editText = findViewById(R.id.editText_Login_phoneNo);
         AppContext.getInstance().setContext(getApplicationContext());
 
         PhoneAuth.setFirebaseAuth(FirebaseAuth.getInstance());
 
-    }
 
         next_login.setOnClickListener(new View.OnClickListener() {
             @Override
