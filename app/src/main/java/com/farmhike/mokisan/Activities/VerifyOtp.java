@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+
 import android.widget.CheckBox;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +20,7 @@ public class VerifyOtp extends AppCompatActivity {
 
     TextView textView;
     Button next_otp;
-    Button back_otp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +29,14 @@ public class VerifyOtp extends AppCompatActivity {
         setContentView(R.layout.activity_verify_otp);
 
 
+
         textView = (TextView)(findViewById(R.id.heading_otp2));
         next_otp = (Button)(findViewById(R.id.next_otp));
         back_otp = (Button)(findViewById(R.id.back_otp));
 
         String temp = UserLoginData.getInstance().getPhoneNo();
         textView.setText("Six digit code sent to "+temp);
+
 
         next_otp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +53,7 @@ public class VerifyOtp extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
     }
 
     //public void verifyOtp(View view) {

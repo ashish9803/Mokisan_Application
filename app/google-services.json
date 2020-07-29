@@ -8,12 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:22779678135:android:d2dd4544af32a33d83ec32",
+        "mobilesdk_app_id": "1:22779678135:android:bcad419870aed46083ec32",
         "android_client_info": {
           "package_name": "com.farmhike.mokisan"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "22779678135-bv39tpodinbsn7beqmdfl3oj05fh41p4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.farmhike.mokisan",
+            "certificate_hash": "919b78a602c204e85e3da0bfd74e401d7bd0f62a"
+          }
+        },
         {
           "client_id": "22779678135-j5cjt7l0i7admuonv8gks3g49ghgn32s.apps.googleusercontent.com",
           "client_type": 3
