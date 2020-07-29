@@ -9,35 +9,50 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="414dp"
-        android:layout_height="188dp"
+        android:layout_width="412dp"
+        android:layout_height="166dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bottom" />
+        app:srcCompat="@drawable/bottom_new" />
 
     <TextView
         android:id="@+id/title_profile"
-        android:layout_width="381dp"
-        android:layout_height="124dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="12dp"
-        android:text="Complete Your Profile"
-        android:textColor="#808080"
-        android:textSize="50sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="55sp"
+        android:text="Complete"
         android:textStyle="bold"
-        app:fontFamily="@font/roboto_medium"
+        android:textColor="#808080"
+        android:textSize="40sp"
+        app:fontFamily="@font/gotham_rounded_book"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
+    <TextView
+        android:id="@+id/title_profile2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:text="Your Profile"
+        android:textColor="#808080"
+        android:textSize="30sp"
+        app:fontFamily="@font/gotham_rounded_book"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_profile" />
+
     <LinearLayout
         android:id="@+id/linear_layout_profile_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/title_profile">
+        android:layout_marginTop="12sp"
+        app:layout_constraintTop_toBottomOf="@+id/title_profile2">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editText_Profile_name"
@@ -114,7 +129,7 @@
         android:id="@+id/radioGroup2"
         android:layout_width="157dp"
         android:layout_height="81dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.098"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,8 +140,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Farmer"
+            app:fontFamily="@font/gotham_rounded_book"
             android:textColor="#808080"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <RadioButton
@@ -134,45 +150,44 @@
             android:layout_width="wrap_content"
             android:layout_height="45dp"
             android:text="Consumer"
+            app:fontFamily="@font/gotham_rounded_book"
             android:textColor="#808080"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
     </RadioGroup>
 
 
-
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="44dp"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/rounded_button"
         android:cursorVisible="false"
         android:ellipsize="none"
-        android:textSize="18sp"
         android:text="Submit"
+        app:fontFamily="@font/gotham_rounded_medium"
         android:textColor="#ffffff"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
-        app:layout_constraintStart_toEndOf="@+id/radioGroup2"
         app:layout_constraintTop_toBottomOf="@+id/linear_layout_profile_pincode" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
         android:layout_marginTop="16dp"
-        android:text="Skip"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/rounded_button"
-        android:textSize="18sp"
-        android:textColor="#ffffff"
         android:cursorVisible="false"
         android:ellipsize="none"
+        android:text="Skip"
+        app:fontFamily="@font/gotham_rounded_medium"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.916"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

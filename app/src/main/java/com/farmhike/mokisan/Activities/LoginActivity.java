@@ -46,9 +46,13 @@ public class LoginActivity extends AppCompatActivity {
         //EditText editText = findViewById(R.id.editText_Login_phoneNo);
         String phoneNo = editText.getEditText().getText().toString();
 
-        if(phoneNo.length()==0 || phoneNo.length()>10)
+        if(phoneNo.length()==0)
         {
             Toast.makeText(getApplicationContext(),"Please Enter Your Phone Number",Toast.LENGTH_LONG).show();
+        }
+        else if(phoneNo.length()>11)
+        {
+            editText.setError("Enter 10 digit mobile number");
         }
         else if(!phoneNo.matches("[0-9]{10}"))
         {
