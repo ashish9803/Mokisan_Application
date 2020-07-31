@@ -3,16 +3,23 @@ package com.farmhike.mokisan.Utils;
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
 import com.farmhike.mokisan.Activities.CompleteYourProfile;
+import com.farmhike.mokisan.Activities.VerifyOtp;
 import com.farmhike.mokisan.Models.AppContext;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskExecutors;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,7 +37,42 @@ public class PhoneAuth {
     private static String mVerificationId;
     PhoneAuthCredential credential;
     /***************/
-    private EditText _edittext_OTP;
+    private TextInputEditText _edittext_OTP;
+    private ProgressBar _verify_PB;
+    private Button _nextButton;
+    private Button _verifyButton;
+
+    public void set_nextButton(Button _nextButton) {
+        this._nextButton = _nextButton;
+    }
+
+    public void set_verifyButton(Button _verifyButton) {
+        this._verifyButton = _verifyButton;
+    }
+
+    public Boolean get_verified() {
+        return _verified;
+    }
+
+    private Boolean _verified;
+
+    public void set_Verify_manually(TextView _Verify_manually) {
+        this._Verify_manually = _Verify_manually;
+    }
+
+    private TextView _Verify_manually;
+
+    public void set_verify_PB(ProgressBar _verify_PB) {
+        this._verify_PB = _verify_PB;
+    }
+
+    public void set_verify_IV(ImageView _verify_IV) {
+        this._verify_IV = _verify_IV;
+    }
+
+    private ImageView _verify_IV;
+
+
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
         @Override
         public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
@@ -44,7 +86,7 @@ public class PhoneAuth {
                 _edittext_OTP.setText(code);
                 // editTextCode.setText(code);
                 //verifying the code
-                //PhoneAuth.getInstance().verifyVerificationCode(code);
+                PhoneAuth.getInstance().verifyVerificationCode(code);
             }
         }
 
@@ -55,8 +97,21 @@ public class PhoneAuth {
         }
 
         @Override
+        public void onCodeAutoRetrievalTimeOut(@NonNull String s) {
+            super.onCodeAutoRetrievalTimeOut(s);
+            if (PhoneAuth.getInstance().credential == null){
+                _edittext_OTP.setError("Unable to fill automatically");
+                _verify_PB.setVisibility(View.GONE);
+                _Verify_manually.setVisibility(View.VISIBLE);
+            }
+        }
+
+        @Override
         public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
             super.onCodeSent(s, forceResendingToken);
+            _verify_PB.setVisibility(View.VISIBLE);
+            _Verify_manually.setVisibility(View.INVISIBLE);
+            _edittext_OTP.setError(null);
             mVerificationId = s;
             mResendToken = forceResendingToken;
             Toast.makeText(AppContext.getInstance().getContext(), "OTP Sent", Toast.LENGTH_SHORT).show();
@@ -65,7 +120,6 @@ public class PhoneAuth {
 
     private PhoneAuth() {
     }
-
     public static PhoneAuth getInstance() {
         if (obj == null) {
             obj = new PhoneAuth();
@@ -82,11 +136,7 @@ public class PhoneAuth {
         PhoneAuth.firebaseAuth = firebaseAuth;
     }
 
-    public EditText get_edittext_OTP() {
-        return _edittext_OTP;
-    }
-
-    public void set_edittext_OTP(EditText _edittext_OTP) {
+    public void set_edittext_OTP(TextInputEditText _edittext_OTP) {
         this._edittext_OTP = _edittext_OTP;
     }
 
@@ -105,28 +155,37 @@ public class PhoneAuth {
         return credential;
     }
 
-    private void verifyVerificationCode(String otp) {
+    public void verifyVerificationCode(String otp) {
+        if(_verify_PB.getVisibility() == View.GONE)
+            _verify_PB.setVisibility(View.VISIBLE);
         //creating the credential
         credential = PhoneAuthProvider.getCredential(mVerificationId, otp);
-
         //signing the user
-        //AppContext.getInstance().getContext().
-
+        if (credential != null){
+            signInWithPhoneAuthCredential(credential);
+        }
     }
 
     public void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
         PhoneAuth.getFirebaseAuth().signInWithCredential(credential)
-                .addOnCompleteListener((Activity) AppContext.getInstance().getContext(), new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             //verification successful we will start the profile activity
-                            Intent intent = new Intent(AppContext.getInstance().getContext(), CompleteYourProfile.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            AppContext.getInstance().getContext().startActivity(intent);
+
+                            _verified = true;
+                            _Verify_manually.setVisibility(View.INVISIBLE);
+                            _edittext_OTP.setError(null);
+                            _edittext_OTP.setEnabled(false);
+                            _verify_PB.setVisibility(View.GONE);
+                            _verify_IV.setVisibility(View.VISIBLE);
+                            _verifyButton.setVisibility(View.INVISIBLE);
+                            _nextButton.setVisibility(View.VISIBLE);
+
+
 
                         } else {
-
                             //verification unsuccessful.. display an error message
 
                             String message = "Somthing is wrong, we will fix it soon...";
@@ -140,6 +199,5 @@ public class PhoneAuth {
                     }
                 });
     }
-
 
 }

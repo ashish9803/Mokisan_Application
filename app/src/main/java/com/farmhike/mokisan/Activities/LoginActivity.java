@@ -28,25 +28,30 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
-        next_login = findViewById(R.id.next_login);
-        editText = findViewById(R.id.editText_Login_phoneNo);
+
         AppContext.getInstance().setContext(getApplicationContext());
 
         PhoneAuth.setFirebaseAuth(FirebaseAuth.getInstance());
 
+
+        next_login = findViewById(R.id.next_login);
+        editText = findViewById(R.id.editText_Login_phoneNo);
         next_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 validatePhoneNo();
             }
         });
+
     }
 
     public void sendOtp() {
         Intent i = new Intent(LoginActivity.this,VerifyOtp.class);
         startActivity(i);
+        PhoneAuth.getInstance().sendVerificationCode(UserLoginData.getInstance().getPhoneNo());
+        finish();
     }
 
     private void validatePhoneNo() {
