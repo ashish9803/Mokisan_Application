@@ -8,6 +8,7 @@
     tools:context=".Activities.LoginActivity">
 
     <ImageView
+
         android:id="@+id/imageView_bottomLogin"
         android:layout_width="412dp"
         android:layout_height="134dp"
@@ -16,11 +17,11 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/cred_new" />
-
     <TextView
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_marginTop="180sp"
         android:text="Login"
         android:textColor="#808080"
@@ -31,6 +32,7 @@
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heading_login2" />
+
 
     <LinearLayout
         android:id="@+id/linear_layout"

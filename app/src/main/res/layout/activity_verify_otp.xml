@@ -54,44 +54,62 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/otp">
+        app:layout_constraintTop_toBottomOf="@+id/otp"
+        android:orientation="horizontal">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editText_Login_otp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="12dp"
-            android:hint="OTP"
-            app:passwordToggleEnabled="true">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword">
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:hint="OTP"
+                app:passwordToggleEnabled="true"
+                android:orientation="horizontal">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_gravity="start"
+                    android:id="@+id/editText_Login_otp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            </com.google.android.material.textfield.TextInputEditText>
 
-        </com.google.android.material.textfield.TextInputLayout>
+        <ProgressBar
+            android:layout_gravity="center_vertical"
+            android:visibility="gone"
+            android:id="@+id/progressbar_verifyOTP"
+            android:layout_width="150px"
+            android:layout_height="150px" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/imageView_verified"
+            android:visibility="gone"
+            android:src="@drawable/verified"
+            android:layout_width="150px"
+            android:layout_height="150px"/>
     </LinearLayout>
 
     <Button
+        android:visibility="invisible"
         android:id="@+id/resend_otp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00000000"
         android:text="Resend OTP"
+        android:onClick="resendOTP"
         app:fontFamily="@font/gotham_rounded_medium"
         android:layout_marginTop="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.695"
-        app:layout_constraintStart_toEndOf="@+id/checkBox"
+        app:layout_constraintStart_toEndOf="@+id/checkBox_verifyOTP"
         app:layout_constraintTop_toBottomOf="@+id/linear_layout_otp" />
 
     <Button
-        android:id="@+id/next_otp"
+        android:visibility="invisible"
+        android:id="@+id/button_next_otp"
         android:layout_width="80dp"
         android:layout_height="30dp"
         android:layout_marginTop="8dp"
@@ -107,13 +125,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resend_otp" />
 
+    <Button
+        android:visibility="visible"
+        android:id="@+id/button_verify"
+        android:onClick="verifyOtp"
+        android:layout_width="85dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_button"
+        android:cursorVisible="false"
+        android:ellipsize="none"
+        android:text="Verify"
+        app:fontFamily="@font/gotham_rounded_medium"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resend_otp" />
+
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBox_verifyOTP"
         android:layout_width="222dp"
         android:layout_height="wrap_content"
         android:text="By signing up you accept the terms of services and privacy policy"
         app:fontFamily="@font/gotham_rounded_medium"
-        app:layout_constraintEnd_toStartOf="@+id/next_otp"
+        app:layout_constraintEnd_toStartOf="@+id/button_next_otp"
         android:layout_marginTop="12sp"
         app:layout_constraintHorizontal_bias="0.225"
         app:layout_constraintStart_toStartOf="parent"
