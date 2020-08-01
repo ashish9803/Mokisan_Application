@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/home"
+            android:title="Home"/>
+        <item
+            android:id="@+id/track_order"
+            android:title="Track Order"/>
+        <item
+            android:id="@+id/wish_list"
+            android:title="Wish List"/>/>
+
+    </group>
+
+    <item android:title="Our Services">
+        <menu>
+
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/agri_input"
+                    android:title="Agri Input"/>
+                <item
+                    android:id="@+id/agri_output"
+                    android:title="Agri Output"/>
+                <item
+                    android:id="@+id/renting_sharing"
+                    android:title="Renting and Sharing"/>
+                <item
+                    android:id="@+id/agrisolution"
+                    android:title="AgriSolution"/>
+                <item
+                    android:id="@+id/mofarm"
+                    android:title="AgriSolution"/>
+
+            </group>
+
+        </menu>
+    </item>
+
+    <item android:title="Share">
+        <menu>
+
+            <group android:checkableBehavior="none">
+
+                <item
+                    android:id="@+id/share"
+                    android:title="Share"/>
+                <item
+                    android:id="@+id/rate_us"
+                    android:title="Rate US"/>
+
+            </group>
+
+        </menu>
+    </item>
+
+
+</menu>
