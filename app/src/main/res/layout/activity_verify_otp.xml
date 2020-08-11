@@ -11,7 +11,7 @@
         android:id="@+id/back_otp"
         android:layout_width="80dp"
         android:layout_height="30dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/rounded_button"
         android:cursorVisible="false"
@@ -37,9 +37,9 @@
         android:id="@+id/otp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180sp"
+        android:layout_marginTop="173dp"
         android:text="OTP"
-        android:textSize="45sp"
+        android:textSize="45dp"
         android:textStyle="bold"
         app:fontFamily="@font/gotham_rounded_book"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +59,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="280dp"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="12dp"
@@ -86,10 +86,10 @@
         <ImageView
             android:layout_gravity="center_vertical"
             android:id="@+id/imageView_verified"
-            android:visibility="gone"
             android:src="@drawable/verified"
-            android:layout_width="150px"
-            android:layout_height="150px"/>
+            android:visibility="gone"
+            android:layout_width="120px"
+            android:layout_height="120px"/>
     </LinearLayout>
 
     <Button
@@ -101,7 +101,7 @@
         android:text="Resend OTP"
         android:onClick="resendOTP"
         app:fontFamily="@font/gotham_rounded_medium"
-        android:layout_marginTop="12sp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.695"
         app:layout_constraintStart_toEndOf="@+id/checkBox_verifyOTP"
@@ -119,7 +119,7 @@
         android:text="Next"
         app:fontFamily="@font/gotham_rounded_medium"
         android:textColor="#ffffff"
-        android:textSize="18sp"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.922"
         app:layout_constraintStart_toStartOf="parent"
@@ -138,7 +138,7 @@
         android:text="Verify"
         app:fontFamily="@font/gotham_rounded_medium"
         android:textColor="#ffffff"
-        android:textSize="18sp"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.922"
         app:layout_constraintStart_toStartOf="parent"
@@ -146,12 +146,13 @@
 
     <CheckBox
         android:id="@+id/checkBox_verifyOTP"
-        android:layout_width="222dp"
-        android:layout_height="wrap_content"
+        android:layout_width="219dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="20dp"
         android:text="By signing up you accept the terms of services and privacy policy"
-        app:fontFamily="@font/gotham_rounded_medium"
+        android:textSize="12dp"
+        app:fontFamily="@font/roboto_medium"
         app:layout_constraintEnd_toStartOf="@+id/button_next_otp"
-        android:layout_marginTop="12sp"
         app:layout_constraintHorizontal_bias="0.225"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linear_layout_otp" />
@@ -161,7 +162,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="75dp"
         android:text="Verify Your Number"
         app:fontFamily="@font/gotham_rounded_book"
         android:textSize="18dp"

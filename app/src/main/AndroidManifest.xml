@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activities.UserProfile"></activity>
-        <activity android:name=".Activities.HomeActivity"/>
+        <activity android:name=".Activities.HomeActivity">
+        </activity>
+
+
         <activity android:name=".Activities.CompleteYourProfile" />
         <activity android:name=".Activities.VerifyOtp" />
         <activity android:name=".Activities.LoginActivity">

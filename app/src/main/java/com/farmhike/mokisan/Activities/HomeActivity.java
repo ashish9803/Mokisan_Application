@@ -4,12 +4,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.farmhike.mokisan.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -17,7 +19,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-    ImageButton menu_icon;
+    ImageView menu_icon;
+    MeowBottomNavigation nav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +29,20 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         drawerLayout = (DrawerLayout)(findViewById(R.id.drawer_layout));
         navigationView = (NavigationView)(findViewById(R.id.navigation_view));
-        menu_icon = (ImageButton)(findViewById(R.id.menu_icon));
+        menu_icon = (ImageView)(findViewById(R.id.menu_icon));
+        nav = (MeowBottomNavigation)(findViewById(R.id.bottom_nav));
 
         navigationDrawer();
+        bottomNavigation();
+
+    }
+
+    private void bottomNavigation() {
+
+        nav.add(new MeowBottomNavigation.Model(1,R.drawable.nav_home));
+        nav.add(new MeowBottomNavigation.Model(2,R.drawable.nav_fav));
+        nav.add(new MeowBottomNavigation.Model(3,R.drawable.nav_cart));
+        nav.add(new MeowBottomNavigation.Model(4,R.drawable.nav_contact));
 
     }
 
