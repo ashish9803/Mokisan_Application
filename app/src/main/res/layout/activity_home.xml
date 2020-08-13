@@ -86,7 +86,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginBottom="100dp"
                 android:columnCount="1"
-                android:rowCount="7"
+                android:rowCount="6"
                 app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
