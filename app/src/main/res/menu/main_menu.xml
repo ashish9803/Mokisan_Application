@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/agri_output"
+            android:icon="@drawable/market"
+            android:textSize="20dp"
+            android:title="Agri-Outputs"/>
+        <item
+            android:id="@+id/agri_input"
+            android:icon="@drawable/bottle"
+            android:textSize="20dp"
+            android:title="Agri-Input"/>
+        <item
+            android:id="@+id/renting_sharing"
+            android:icon="@drawable/rent"
+            android:textSize="20dp"
+            android:title="Renting and Sharing"/>
+        <item
+            android:id="@+id/agrisolution"
+            android:icon="@drawable/puzzle"
+            android:textSize="20dp"
+            android:title="AgriSolution"/>
+        <item
+            android:id="@+id/mofarm"
+            android:icon="@drawable/farm"
+            android:textSize="20dp"
+            android:title="MoFarm"/>
+        <item
+            android:id="@+id/support"
+            android:icon="@drawable/support"
+            android:textSize="20dp"
+            android:title="Support"/>
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/logout"
+            android:textSize="20dp"
+            android:title="Logout"/>
+
+
+    </group>
+
+</menu>
