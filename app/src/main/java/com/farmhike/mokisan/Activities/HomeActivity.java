@@ -3,7 +3,6 @@ package com.farmhike.mokisan.Activities;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -42,7 +41,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         nav.add(new MeowBottomNavigation.Model(1,R.drawable.nav_home));
         nav.add(new MeowBottomNavigation.Model(2,R.drawable.nav_fav));
         nav.add(new MeowBottomNavigation.Model(3,R.drawable.nav_cart));
-        nav.add(new MeowBottomNavigation.Model(4,R.drawable.nav_contact));
+        nav.add(new MeowBottomNavigation.Model(4, R.drawable.nav_contact));
+        nav.show(1, true);
 
     }
 
@@ -51,7 +51,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            //super.onBackPressed();
         }
     }
 
