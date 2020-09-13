@@ -22,7 +22,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="15dp"
@@ -51,9 +51,9 @@
                 android:layout_height="wrap_content"
                 android:text="MoKisan"
                 android:textColor="#ffffff"
-                android:textSize="35dp"
+                android:textSize="30dp"
                 android:textStyle="bold"
-                app:fontFamily="@font/gotham_rounded_book"
+                app:fontFamily="@font/roboto_medium"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/farmer_icon"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -107,14 +107,57 @@
                     app:cardCornerRadius="8dp"
                     app:cardElevation="8dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:text="Climate And Temperature"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        app:fontFamily="@font/gotham_rounded_book" />
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:text="Climate And Temperature"
+                            android:textColor="#000000"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            app:fontFamily="@font/gotham_rounded_book" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Sunday, 18th July 2020"
+                                android:textColor="#00A86B"
+                                android:textSize="20dp"
+                                android:textStyle="bold"
+                                app:fontFamily="@font/gotham_rounded_book" />
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="80dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/ic_baseline_wb_sunny_24"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="28 Degree, Prec. 28%"
+                                android:textColor="#00A86B"
+                                android:textSize="20dp"
+                                android:textStyle="bold"
+                                app:fontFamily="@font/gotham_rounded_book" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -129,14 +172,21 @@
                     app:cardCornerRadius="8dp"
                     app:cardElevation="8dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:text="Benefits"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        app:fontFamily="@font/gotham_rounded_book" />
+                        android:background="@drawable/benefits_com">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:text="Benefits"
+                            android:textColor="#000000"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            app:fontFamily="@font/gotham_rounded_book" />
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -151,14 +201,21 @@
                     app:cardCornerRadius="8dp"
                     app:cardElevation="8dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:text="Agri-Input"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        app:fontFamily="@font/gotham_rounded_book" />
+                        android:background="@drawable/agriinput_com">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:text="Agri-Input"
+                            android:textColor="#000000"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            app:fontFamily="@font/gotham_rounded_book" />
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -173,14 +230,21 @@
                     app:cardCornerRadius="8dp"
                     app:cardElevation="8dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:text="Agri-Output"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        app:fontFamily="@font/gotham_rounded_book" />
+                        android:background="@drawable/agrioutput_com">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:text="Agri-Output"
+                            android:textColor="#000000"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            app:fontFamily="@font/gotham_rounded_book" />
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -195,14 +259,21 @@
                     app:cardCornerRadius="8dp"
                     app:cardElevation="8dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:text="Agri-Share"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        app:fontFamily="@font/gotham_rounded_book" />
+                        android:background="@drawable/agrishare_com">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:text="Agri-Share"
+                            android:textColor="#000000"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            app:fontFamily="@font/gotham_rounded_book" />
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -217,14 +288,21 @@
                     app:cardCornerRadius="8dp"
                     app:cardElevation="8dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:text="MoFarm"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        app:fontFamily="@font/gotham_rounded_book" />
+                        android:background="@drawable/mofarm_com">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:text="MoFarm"
+                            android:textColor="#000000"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            app:fontFamily="@font/gotham_rounded_book" />
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
 
