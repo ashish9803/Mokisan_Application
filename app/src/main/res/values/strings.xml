@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MoKisan</string>
+    <string name="Base_URL">https://mokishan.herokuapp.com/api/v1</string>
 </resources>

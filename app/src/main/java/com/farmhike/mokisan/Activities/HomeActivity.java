@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -51,6 +50,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     private void bottomNavigation() {
 
+
         nav.add(new MeowBottomNavigation.Model(1,R.drawable.ic_baseline_home_24));
         nav.add(new MeowBottomNavigation.Model(2,R.drawable.ic_baseline_bookmarks_24));
         nav.add(new MeowBottomNavigation.Model(3,R.drawable.ic_baseline_shopping_cart_24));
@@ -64,7 +64,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            //super.onBackPressed();
         }
     }
 
